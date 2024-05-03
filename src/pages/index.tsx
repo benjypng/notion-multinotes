@@ -33,30 +33,29 @@ function App() {
   };
 
   return (
-    <>
-      <div className="card">
-        <h1>Notion Multi Notes</h1>
+    <div className="container">
+      <h1>Notion Multi Notes</h1>
+      <p>This tool allows you to combine multiple Notion notes into one.</p>
+      <div>
+        <textarea
+          onChange={(e) => setLinks(e.target.value)}
+          placeholder="Paste links here..."
+          cols={100}
+          rows={5}
+        ></textarea>
         <div>
-          <textarea
-            onChange={(e) => setLinks(e.target.value)}
-            placeholder="Paste links here..."
-            cols={100}
-            rows={5}
-          ></textarea>
-          <div>
-            <button className="combine-btn" onClick={combine}>
-              Combine
-            </button>
-          </div>
-          <div style={{ position: "relative" }}>
-            <button className="copy-btn" onClick={copy}>
-              Copy
-            </button>
-            <textarea value={result} cols={120} rows={50} readOnly></textarea>
-          </div>
+          <button className="combine-btn" onClick={combine}>
+            Combine
+          </button>
+        </div>
+        <div style={{ position: "relative" }}>
+          <button className="copy-btn" onClick={copy}>
+            Copy
+          </button>
+          <textarea value={result} cols={120} rows={50} readOnly></textarea>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
